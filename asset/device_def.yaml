@@ -1,0 +1,106 @@
+---
+# BSD 3-Clause License
+#
+# Copyright (c) 2024, fofolevrai
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from
+#    this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -------------------------------------------------------------------------------
+#
+# List of pointclould2 devices
+# Mandatory fields are 'name', width, height and pointFields[]
+# By default, optional fields are set as :
+#
+# is_bigendian: true
+# point_step: Calculated by the message generator
+# row_step: Calculated by the message generator
+# is_dense: true
+#
+# IT IS NOT RECOMMANDED TO FORCE 'offset' FIELD AS IT WILL BE AUTOMATICLY INDEXED
+# BY THE PYTHON GENERATOR OR AT RUNTIME (depending selected option)
+#
+# Example :
+#  - name: "x"
+#    callback: NULL
+#
+# is equivalent to :
+#  - name: "x"
+#
+#
+devices:
+ - name: "xyz"
+   width: 320
+   height: 640
+   pointFields:
+    - name: "x"
+      callback: "NULL"
+    - name: "y"
+      callback: "NULL"
+    - name: "z"
+      callback: "NULL"
+ - name: "rgb_camera"
+   width: 1920
+   height: 1080
+   pointFields:
+    - name: "rgb"
+ - name: "rgbd_camera"
+   width: 640
+   height: 320
+   pointFields:
+    - name: "x"
+      callback: "NULL"
+    - name: "y"
+      callback: "NULL"
+    - name: "z"
+      callback: "NULL"
+    - name: "rgb"
+ - name: "custom_vl53_tof_all"
+   width: 8
+   height: 8
+   pointFields:
+    - name: "x"
+      callback: "NULL"
+    - name: "y"
+      callback: "NULL"
+    - name: "z"
+      callback: "NULL"
+    - name: "intensity"
+    - name: "vl_ambient"
+    - name: "vl_target_nbr"
+    - name: "vl_spad_nbr"
+    - name: "vl_reflectance"
+    - name: "vl_status"
+ - name: "custom_vl53_tof_min"
+   width: 8
+   height: 8
+   pointFields:
+    - name: "x"
+      callback: "NULL"
+    - name: "y"
+      callback: "NULL"
+    - name: "z"
+      callback: "NULL"
+    - name: "intensity"
+    - name: "vl_status"

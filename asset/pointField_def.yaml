@@ -1,0 +1,75 @@
+---
+# BSD 3-Clause License
+#
+# Copyright (c) 2024, fofolevrai
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from
+#    this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -------------------------------------------------------------------------------
+#
+# List of msg/PointField
+# Mandatory field is 'name'
+# By default, optional fields are set as :
+#
+# count: 1
+# offset: Not defined
+# datatype: "sensor_msgs__msg__PointField__FLOAT32"
+#
+# IT IS NOT RECOMMANDED TO FORCE 'offset' FIELD AS IT WILL BE AUTOMATICLY INDEXED
+# BY THE PYTHON GENERATOR OR AT RUNTIME (depending selected option)
+#
+# Example :
+#  - name: "x"
+#    count: 1
+#    datatype: "sensor_msgs__msg__PointField__FLOAT32"
+#
+# is equivalent to :
+#  - name: "x"
+#
+#
+pointFields:
+ - name: "x"
+   count: 1
+   datatype: "sensor_msgs__msg__PointField__FLOAT32"
+ - name: "y"
+   count: 1
+   datatype: "sensor_msgs__msg__PointField__FLOAT32"
+ - name: "z"
+ - name: "rgb"
+ - name: "rgba"
+ - name: "vl_ambient"
+   datatype: "sensor_msgs__msg__PointField__UINT32"
+ - name: "vl_target_nbr"
+   datatype: "sensor_msgs__msg__PointField__UINT8"
+ - name: "vl_spad_nbr"
+   datatype: "sensor_msgs__msg__PointField__UINT32"
+ - name: "intensity"
+   datatype: "sensor_msgs__msg__PointField__UINT32"
+ - name: "vl_sigma"
+   datatype: "sensor_msgs__msg__PointField__UINT16"
+ - name: "vl_reflectance"
+   datatype: "sensor_msgs__msg__PointField__UINT8"
+ - name: "vl_status"
+   datatype: "sensor_msgs__msg__PointField__UINT8"
