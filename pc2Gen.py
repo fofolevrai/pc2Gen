@@ -34,10 +34,10 @@ import sys
 import yaml
 
 # Author :      fofolevrai
-# Revision :    1.0.0
-# Date :        11-06-2024
-# Comments :    Create 'sensor_msgs_pointcloud2_devices_descriptor.h'
-#               and 'sensor_msgs_pointcloud2_devices_descriptor.c' files
+# Revision :    0.0.1
+# Date :        11-09-2024
+# Comments :    Create 'point_cloud2_iterator.h'
+#               and 'point_cloud2_iterator.c' files
 #               to incorporate in your project which describes PointCloud2
 #               messages of your described sensor device to incorporate 
 
@@ -187,15 +187,16 @@ def create_static_pc2_message(device):
     return None
 
 def main():
-    parser = argparse.ArgumentParser(description="C poinCloud2 header file generator")
-    parser.add_argument("--devFile", type=str, required=False, help="Yaml dictionnary file path containing available frames (default \"asset/device_def.yaml\")")
-    parser.add_argument("--pfFile", type=str, required=False, help="Yaml dictionnary file path containing available point fields (default \"asset/pointField_def.yaml\")")
-    parser.add_argument("--model", type=str, required=False, help="C header file taken as reference for completion (default \"asset/point_cloud2_iterator_model.h\")")
-    parser.add_argument("--output", type=str, required=False, help="C header file generated from the header model (default \"point_cloud2_iterator.h\")")
+    parser = argparse.ArgumentParser(prog="pc2Gen", description="C poinCloud2 header file generator")
+    parser.add_argument("--version", action='version', version="%(prog)s 0.0.1")
+    parser.add_argument("--devFile", "-df", type=str, required=False, help="Yaml dictionnary file path containing available frames (default \"device_def.yaml\")")
+    parser.add_argument("--pfFile", "-pf", type=str, required=False, help="Yaml dictionnary file path containing available point fields (default \"asset/pointField_def.yaml\")")
+    parser.add_argument("--model", "-m", type=str, required=False, help="C header file taken as reference for completion (default \"asset/point_cloud2_iterator_model.h\")")
+    parser.add_argument("--output", "-o", type=str, required=False, help="C header and source output file name (default \"point_cloud2_iterator.h\")")
     args = parser.parse_args()
 
     # Default devices description file if no '--file' argument given
-    dev_file = 'asset/device_def.yaml'
+    dev_file = 'device_def.yaml'
     # PointField description file if no '--pfFile' argument given
     pf_file = 'asset/pointField_def.yaml'
     # Default C header model file if no '--model' argument given

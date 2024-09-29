@@ -38,25 +38,28 @@
 # point_step: Calculated by the message generator
 # row_step: Calculated by the message generator
 # is_dense: true
+# name:callback
 #
 # IT IS NOT RECOMMANDED TO FORCE 'offset' FIELD AS IT WILL BE AUTOMATICLY INDEXED
 # BY THE PYTHON GENERATOR OR AT RUNTIME (depending selected option)
 #
 # Example :
-#  - name: "x"
-#    callback: NULL
+# -------
+# devices:
+#  - name: "z_device"
+#    pointFields:
+#     - name: "z"
 #
 # is equivalent to :
-#  - name: "x"
+#  - name: "z_device"
+#    pointFields:
+#     - name: "z"
+#       callback: "NULL"
 #
 #
 devices:
- - name: "custom_vl53_tof_min"
+ - name: "xyz_device"
    pointFields:
     - name: "x"
     - name: "y"
-      callback: "NULL"
     - name: "z"
-      callback: "NULL"
-    - name: "intensity"
-    - name: "vl_status"
