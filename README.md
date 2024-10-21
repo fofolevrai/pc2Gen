@@ -118,9 +118,25 @@ cloud.data.data = my_xyz_sensor_data;
 ## Compile your code
 
 This step consists of ROS/ROS2 [package](https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html) creation.
+
+## Examples
+
+**Intel realsense D4xx**
+
+realsense_d4xx_face_render
+
+<p align="center">
+<img src=".images/realsense_d4xx_face_render.jpg" width=300 height=300>
+</p>
+
+**ST VL53Lx**
+
+*TBD*
+
 # Test
 
-TBD
+*TBD*
+
 # Issue
 
 If you find issue(s), please report to the [dedicated tumb](https://github.com/fofolevrai/pc2Gen/issues)
