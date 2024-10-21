@@ -123,10 +123,8 @@ This step consists of ROS/ROS2 [package](https://docs.ros.org/en/rolling/Tutoria
 
 **Intel realsense D4xx**
 
-realsense_d4xx_face_render
-
-<p align="center">
-<img src=".images/realsense_d4xx_face_render.png" width=500 height=500>
+<p align="left">
+<img src=".images/realsense_d4xx_face_render.png" width=300 height=300>
 </p>
 
 **ST VL53Lx**
