@@ -86,8 +86,8 @@ To instanciate your PointCloud2 message, call the function `CreatePointCloud2Fro
   sensor_msgs__msg__PointCloud2 cloud;
 
   /* Mock (sensor characteristics) */
-  uint32_t height_size = 8;     // Nbr column pixels
-  uint32_t width_size = 8;      // Nbr line pixels
+  uint32_t height_size = 8;     // Nbr line pixels
+  uint32_t width_size = 8;      // Nbr column pixels
   bool is_bigendian = false;    // Data bytes ordering
   
   /* PointCloud2 instanciation */
