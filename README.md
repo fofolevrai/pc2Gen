@@ -127,10 +127,8 @@ TBD
 
 **Intel realsense D4xx**
 
-realsense_d4xx_face_render
-
-<p align="center">
-<img src=".images/realsense_d4xx_face_render.jpg" width=300 height=300>
+<p align="left">
+<img src=".images/realsense_d4xx_face_render.png" width=300 height=300>
 </p>
 
 **ST VL53Lx**
