@@ -4,14 +4,11 @@
 
 # Context
 
-From expensive [LiDAR](https://en.wikipedia.org/wiki/Lidar) to entry-level [Time-Of-Flight (TOF)](https://en.wikipedia.org/wiki/Time-of-flight_camera) cameras, point clouds data and its ROS2 structured [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) message are nowadays a need for environnement sensing. Due to sensor diversity, understanding and configuring the highly customable [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) could be headache and time consuming.
+From expensive [LiDAR](https://en.wikipedia.org/wiki/Lidar) to entry-level [Time-Of-Flight (TOF)](https://en.wikipedia.org/wiki/Time-of-flight_camera) cameras, point clouds and associated ROS2 [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) message are nowadays a need for environnement sensing. Due to sensor diversity, understanding and configuring the highly customable [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) could be headache and time consuming.
 
 # Description
 
-**Pc2Gen aims to lower time and code complexity of [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) integration** within [ROS2](https://docs.ros.org/en/rolling/index.html) or [micro-ros](https://micro.ros.org) project by generating, from descriptions, the relative C code allowing direct message creation and manipulation.
-
-
-
+**Pc2Gen aims to lower time and code complexity of [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) integration** within [ROS2](https://docs.ros.org/en/rolling/index.html) or [micro-ros](https://micro.ros.org) project by generating, from descriptions, the handling C code.
 
 > [!NOTE]
 > * Pc2Gen has been built upon [Pc2Gen_lib](https://github.com/fofolevrai/pc2Gen_lib) library
@@ -47,7 +44,7 @@ git clone https://github.com/fofolevrai/pc2Gen.git && cd pc2Gen
 ```
 **1.  Describe the PointCloud2 message**
 
-In this root directory, create a file `xyz_device.yaml` which discribes the ordered informed data that will populate by your sensor within your PointCloud2 message.
+In this root directory, create a file `xyz_device.yaml` which discribes the ordered data that will be populated by your sensor.
 
 ```yaml
 devices:
@@ -57,7 +54,8 @@ devices:
     - name: "y"
     - name: "z"
 ```
-This configures PointCloud2 message. Each 3D pixel will represent (in order) X, Y, and Z spacial information.
+> [!TIP]
+> In the example, each sensor pixel will represent the cartesian coordinates X, Y, and Z.
 
 **2. Generate relative C code**
 
@@ -74,7 +72,7 @@ Files generated with success :
 ```
 This files contain the PointCloud2 message and helper functions.
 
-> [!TIP]  
+> [!NOTE]  
 > For more complex usage, please refer to the [dedicated page](doc/DEFINITION.md).
 
 ## Integrate pc2Gen generated code to your project
@@ -115,7 +113,7 @@ Feed the message with your sensor data :
 //  Link data cloud pointer to your fetched data
 cloud.data.data = my_xyz_sensor_data;
 ```
-> [!CAUTION]  
+> [!WARNING]  
 > * Do respect the data ordering as described in the [device_def.yaml](asset/device_def.yaml) file.
 > * Do respect the data type as informed in the [pointField_def.yaml](asset/pointField_def.yaml) file
 
