@@ -2,15 +2,19 @@
 <img src=".images/pc2Gen_logo.jpg" width=300 height=300>
 </p>
 
+# Context
+
+From expensive [LiDAR](https://en.wikipedia.org/wiki/Lidar) to entry-level [Time-Of-Flight (TOF)](https://en.wikipedia.org/wiki/Time-of-flight_camera) cameras, point clouds data and its ROS2 structured [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) message are nowadays a need for environnement sensing. Due to sensor diversity, understanding and configuring the highly customable [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) could be headache and time consuming.
+
 # Description
 
-From expensive [LiDAR](https://en.wikipedia.org/wiki/Lidar) to entry-level [Time-Of-Flight (TOF)](https://en.wikipedia.org/wiki/Time-of-flight_camera) cameras, point clouds data and its ROS2 structured [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) message are nowadays a need for environnement sensing. Due to sensor diversity, understanding and configuring highly customable [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) could be headache and time consuming.
-
-**Pc2Gen aims to lower time and code complexity of [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) integration** within [ROS2](https://docs.ros.org/en/rolling/index.html) or [micro-ros](https://micro.ros.org) project by generating, from input descriptions, the relative C code allowing direct message creation and manipulation.
+**Pc2Gen aims to lower time and code complexity of [sensor_msgs/PointCloud2](https://docs.ros.org/en/ros2_packages/rolling/api/sensor_msgs/interfaces/msg/PointCloud2.html) integration** within [ROS2](https://docs.ros.org/en/rolling/index.html) or [micro-ros](https://micro.ros.org) project by generating, from descriptions, the relative C code allowing direct message creation and manipulation.
 
 
-> [!NOTE]  
-> Pc2Gen has been thought for both heavy and resourced constrained targets.
+
+
+> [!NOTE]
+> * Pc2Gen has been built upon [Pc2Gen_lib](https://github.com/fofolevrai/pc2Gen_lib) library
 
 # Get Started
 
@@ -121,6 +125,8 @@ This step consists of ROS/ROS2 [package](https://docs.ros.org/en/rolling/Tutoria
 
 ## Examples
 
+TBD
+
 **Intel realsense D4xx**
 
 realsense_d4xx_face_render
@@ -135,7 +141,7 @@ realsense_d4xx_face_render
 
 # Test
 
-*TBD*
+Please refer to [Pc2Gen_lib test section](https://github.com/fofolevrai/pc2Gen_lib#test-library).
 
 # Issue
 
@@ -153,7 +159,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Authors
+## Contributors
 
 * [@fofolevrai](https://github.com/fofolevrai)
 
